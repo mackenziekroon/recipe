@@ -29,12 +29,13 @@ body {
   z-index: 1;
   background-color: #214042;
   color: white;
-  border-radius: 50%;
+  border-radius: 40px;
   border: none;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 100px;
-  width: 180px;
+  height: 48px;
+  width: 100%;
+  max-width: 284px;
 }
