@@ -1,3 +1,40 @@
 body {
-  background-color: darksalmon;
+  background-color: white;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+.header-container {
+  display: flex;
+  width: 100vw;
+  height: 70px;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #214042;
+}
+
+.homepage-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.hero-img {
+  width: 100%;
+  position: relative;
+}
+
+.get-started-btn {
+  z-index: 1;
+  background-color: #214042;
+  color: white;
+  border-radius: 50%;
+  border: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100px;
+  width: 180px;
 }
