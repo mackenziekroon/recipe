@@ -12,7 +12,7 @@ class RecipeViewSet(viewsets.ModelViewSet) :
 
 #Allergen Viewset
 class AllergenViewSet(viewsets.ModelViewSet) :
-  queryset = Recipe.objects.all()
+  queryset = Allergens.objects.all()
   permission_classes = [
     permissions.AllowAny
   ]
