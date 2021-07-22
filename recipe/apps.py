@@ -8,3 +8,7 @@ class RecipeConfig(AppConfig):
 class AllergenConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'allergen'
+
+class CustomerCongif(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'customer'

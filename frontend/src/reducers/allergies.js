@@ -13,7 +13,6 @@ export const fetchAllergens = () => {
   return async (dispatch) => {
     try {
       const { data } = await axios.get("/api/allergen");
-      console.log("allergies->", data);
       dispatch(getAllergens(data));
     } catch (error) {
       console.log(error);

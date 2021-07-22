@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import customer, { postCustomer } from "../../reducers/customer";
 
 class Form extends React.Component {
   constructor(props) {
@@ -24,22 +26,16 @@ class Form extends React.Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    console.log({
+    const customerData = {
       firstname: this.state.firstName,
       lastname: this.state.lastName,
       email: this.state.email,
       childfirstname: this.state.childFirstName,
       childlastname: this.state.childLastName,
-    });
-    this.props.history.push("/allergies");
-    // this.setState({
-    //   firstName: "",
-    //   lastName: "",
-    //   email: "",
-    //   childFirstName: "",
-    //   childLastName: "",
-    //   allergies: [],
-    // });
+    };
+    console.log(customerData);
+    this.props.addNewCustomer(customerData);
+    // this.props.history.push("/allergies");
   }
 
   render() {
@@ -112,4 +108,16 @@ class Form extends React.Component {
   }
 }
 
-export default Form;
+const mapState = (state) => {
+  return {
+    customer: state.customer,
+  };
+};
+
+const mapDispatch = (dispatch) => {
+  return {
+    addNewCustomer: (customer) => dispatch(postCustomer(customer)),
+  };
+};
+
+export default connect(mapState, mapDispatch)(Form);

@@ -34,18 +34,7 @@ class Allergies extends Component {
   }
 
   render() {
-    //dummy data
-    const allergies = [
-      { id: 1, name: "milk" },
-      { id: 2, name: "eggs" },
-      { id: 23, name: "eggs" },
-      { id: 21, name: "eggs" },
-      { id: 25, name: "eggs" },
-      { id: 3, name: "eggs" },
-      { id: 5, name: "eggs" },
-      { id: 12, name: "eggs" },
-    ];
-    // const allergens = this.props.allergens;
+    const allergens = this.props.allergens;
     return (
       <div className="form-container">
         <h2>Please select all of your child's allergies</h2>
@@ -57,7 +46,7 @@ class Allergies extends Component {
               </div>
             </FormLabel>
             <div className="allergies-list">
-              {allergies.map((allergy) => (
+              {allergens.map((allergy) => (
                 <FormControlLabel
                   key={allergy.id}
                   control={
