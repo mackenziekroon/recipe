@@ -14,7 +14,6 @@ class App extends React.Component {
     return (
       <Provider store={store}>
         <Routes />
-        <Form />
       </Provider>
     );
   }

@@ -23,7 +23,13 @@ class Form extends React.Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    // await this.props.newCandidate({...this.state}, this.props.organization.id)
+    console.log({
+      firstname: this.state.firstName,
+      lastname: this.state.lastName,
+      email: this.state.email,
+      childfirstname: this.state.childFirstName,
+      childlastname: this.state.childlastname,
+    });
     this.setState({
       firstName: "",
       lastName: "",
@@ -43,11 +49,11 @@ class Form extends React.Component {
       childLastName,
     } = this.state;
     return (
-      <div>
+      <div className="form-container">
         <h1>Please fill out your details</h1>
-        <form onSubmit={this.handleSubmit}>
+        <form className="form" onSubmit={this.handleSubmit}>
           <div>
-            First Name
+            <div className="form-label"> First Name</div>
             <input
               type="text"
               name="firstName"
@@ -57,7 +63,7 @@ class Form extends React.Component {
             />
           </div>
           <div>
-            Last Name
+            <div className="form-label"> Last Name</div>
             <input
               type="text"
               name="lastName"
@@ -67,7 +73,7 @@ class Form extends React.Component {
             />
           </div>
           <div>
-            Email
+            <div className="form-label"> Email</div>
             <input
               type="text"
               name="email"
@@ -77,7 +83,7 @@ class Form extends React.Component {
             />
           </div>
           <div>
-            Child's First Name
+            <div className="form-label"> Child's First Name</div>
             <input
               type="text"
               name="childFirstName"
@@ -87,7 +93,7 @@ class Form extends React.Component {
             />
           </div>
           <div>
-            Child's Last Name
+            <div className="form-label"> Child's Last Name</div>
             <input
               type="text"
               name="childLastName"
@@ -96,7 +102,7 @@ class Form extends React.Component {
               required
             />
           </div>
-          <div>Allergies -> check list</div>
+          <div>Allergies : check list</div>
           <button>Submit</button>
         </form>
       </div>
