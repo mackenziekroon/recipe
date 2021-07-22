@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Form extends React.Component {
   constructor(props) {
@@ -28,16 +29,17 @@ class Form extends React.Component {
       lastname: this.state.lastName,
       email: this.state.email,
       childfirstname: this.state.childFirstName,
-      childlastname: this.state.childlastname,
+      childlastname: this.state.childLastName,
     });
-    this.setState({
-      firstName: "",
-      lastName: "",
-      email: "",
-      childFirstName: "",
-      childLastName: "",
-      allergies: [],
-    });
+    this.props.history.push("/allergies");
+    // this.setState({
+    //   firstName: "",
+    //   lastName: "",
+    //   email: "",
+    //   childFirstName: "",
+    //   childLastName: "",
+    //   allergies: [],
+    // });
   }
 
   render() {
@@ -102,8 +104,8 @@ class Form extends React.Component {
               required
             />
           </div>
-          <div>Allergies : check list</div>
-          <button>Submit</button>
+
+          <button className="submit-form-btn">Next</button>
         </form>
       </div>
     );

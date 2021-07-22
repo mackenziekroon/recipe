@@ -3,6 +3,7 @@ import { Router, Link, Route, Switch } from "react-router-dom";
 import Form from "./Form";
 import Homepage from "./Homepage";
 import Recipes from "./Recipes";
+import Allergies from "./Allergies";
 import history from "./history";
 
 const Routes = () => {
@@ -11,6 +12,7 @@ const Routes = () => {
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route exact path="/form" component={Form} />
+        <Route exact path="/allergies" component={Allergies} />
         <Route exact path="/recipes" component={Recipes} />
       </Switch>
     </Router>

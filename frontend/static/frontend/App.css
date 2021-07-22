@@ -40,14 +40,13 @@ body {
   max-width: 284px;
 }
 
-div.form-container {
-  background-color: lightblue;
-  height: 100vh;
-  width: 100vw;
+.form-container {
   display: flex;
   flex-direction: column;
+  height: 200vh;
+  width: 100vw;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .form {
@@ -55,20 +54,45 @@ div.form-container {
   flex-direction: column;
   width: 70%;
   height: 80%;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 10px;
 }
 
 input {
-  width: 200px;
+  width: 250px;
   height: 30px;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
-  border: none;
+  border: 3px #214042 solid;
+  border-radius: 40px;
+  padding: 10px;
 }
 
 .form-label {
   text-align: center;
   margin: 15px;
+  color: #214042;
+}
+
+legend.MuiFormLabel-root.skills-box-container {
+  padding: 25px;
+}
+
+.allergy-checklist {
+  height: 500px;
+  width: 250px;
+  background-color: aquamarine;
+  margin: 30px 0 30px 0;
+}
+
+.submit-form-btn {
+  z-index: 1;
+  background-color: #214042;
+  color: white;
+  border-radius: 40px;
+  border: none;
+  height: 48px;
+  width: 100%;
+  max-width: 284px;
 }
