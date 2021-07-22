@@ -78,11 +78,8 @@ WSGI_APPLICATION = 'tinyorganics.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'tinyorganics',
-        'HOST': 'localhost',
-        'USER': 'root',
-        'PASSWORD': 'Catfish0pink?!'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
 
     }
 }
