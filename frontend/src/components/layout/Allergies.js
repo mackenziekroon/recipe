@@ -11,20 +11,21 @@ import Checkbox from "@material-ui/core/Checkbox";
 class Allergies extends Component {
   constructor(props) {
     super(props);
-    // this.handleClick = this.handleClick.bind(this);
-    // this.handleSaveAllergies = this.handleSaveAllergies.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleClick(allergyId, event) {
-    this.props.modifyAllergies({
-      id: allergyId,
-      selected: event.target.checked,
-    });
+    console.log(event);
+    // this.props.modifyAllergies({
+    //   id: allergyId,
+    //   selected: event.target.checked,
+    // });
   }
 
-  handleSaveSkills() {
+  handleSubmit() {
     // this.props.saveSkills(this.props.match.params.ownerId, this.props.skills)
-    // this.props.history.push('/onboarding')
+    this.props.history.push("/recipes");
   }
 
   componentDidMount() {
@@ -80,7 +81,7 @@ class Allergies extends Component {
 
             <button
               type="button"
-              onClick={this.handleSaveAllergies}
+              onClick={this.handleSubmit}
               className="submit-form-btn"
               style={{ padding: "15px 80px" }}
             >

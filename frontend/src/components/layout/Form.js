@@ -52,7 +52,7 @@ class Form extends React.Component {
     } = this.state;
     return (
       <div className="form-container">
-        <h1>Please fill out your details</h1>
+        <h3>Please fill out your details</h3>
         <form className="form" onSubmit={this.handleSubmit}>
           <div>
             <div className="form-label"> First Name</div>
