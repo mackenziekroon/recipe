@@ -37,43 +37,57 @@ class Allergies extends Component {
     const allergies = [
       { id: 1, name: "milk" },
       { id: 2, name: "eggs" },
+      { id: 23, name: "eggs" },
+      { id: 21, name: "eggs" },
+      { id: 25, name: "eggs" },
+      { id: 3, name: "eggs" },
+      { id: 5, name: "eggs" },
+      { id: 12, name: "eggs" },
     ];
-    const allergens = this.props.allergens;
+    // const allergens = this.props.allergens;
     return (
       <div className="form-container">
-        <FormControl component="fieldset">
-          <FormLabel className="skills-box-container" component="legend">
-            <div style={{ fontSize: "1.35rem" }}>{this.props.displayName}</div>
-          </FormLabel>
-          <div className="allergies_list">
-            {allergies.map((allergy) => (
-              <FormControlLabel
-                key={allergy.id}
-                control={
-                  <Checkbox
-                    // style={{ color: "white", transform: "scale(1.3)" }}
-                    checked={allergy.selected}
-                    onChange={(event) => this.handleClick(allergy.id, event)}
-                    name={allergy.name}
-                    size="large"
-                  />
-                }
-                label={
-                  <span style={{ fontSize: "1.3rem" }}>{allergy.name}</span>
-                }
-              />
-            ))}
-          </div>
+        <h2>Please select all of your child's allergies</h2>
+        <div className="allergy-checklist">
+          <FormControl component="fieldset">
+            <FormLabel className="skills-box-container" component="legend">
+              <div style={{ fontSize: "1.35rem" }}>
+                {this.props.displayName}
+              </div>
+            </FormLabel>
+            <div className="allergies-list">
+              {allergies.map((allergy) => (
+                <FormControlLabel
+                  key={allergy.id}
+                  control={
+                    <Checkbox
+                      style={{
+                        color: "#214042",
+                        //  transform: "scale(1.3)"
+                      }}
+                      checked={allergy.selected}
+                      onChange={(event) => this.handleClick(allergy.id, event)}
+                      name={allergy.name}
+                      size="large"
+                    />
+                  }
+                  label={
+                    <span style={{ fontSize: "1.3rem" }}>{allergy.name}</span>
+                  }
+                />
+              ))}
+            </div>
 
-          <button
-            type="button"
-            onClick={this.handleSaveAllergies}
-            className="upload-img-button"
-            style={{ padding: "15px 80px" }}
-          >
-            SUBMIT
-          </button>
-        </FormControl>
+            <button
+              type="button"
+              onClick={this.handleSaveAllergies}
+              className="submit-form-btn"
+              style={{ padding: "15px 80px" }}
+            >
+              SUBMIT
+            </button>
+          </FormControl>
+        </div>
       </div>
     );
   }
@@ -108,4 +122,4 @@ const mapDispatch = (dispatch) => {
 //   };
 // };
 
-export default Allergies;
+export default connect(mapState, mapDispatch)(Allergies);
