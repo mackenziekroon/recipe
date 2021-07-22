@@ -9,6 +9,7 @@ class Recipes extends React.Component {
 
   render() {
     const recipes = this.props.recipes;
+
     return (
       <div>
         <h1>All Recipes</h1>

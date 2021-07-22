@@ -12,7 +12,8 @@ export const getRecipes = (recipes) => ({
 export const fetchRecipes = () => {
   return async (dispatch) => {
     try {
-      const { data } = axios.get("/api/recipe/");
+      const { data } = await axios.get("/api/recipe/");
+      console.log("Data-->", data);
       dispatch(getRecipes(data));
     } catch (error) {
       console.log(error);
