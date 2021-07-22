@@ -8,12 +8,11 @@ export const getRecipes = (recipes) => ({
   recipes,
 });
 
-//THUNK
+//THUNK -> fetching all recipes in our db
 export const fetchRecipes = () => {
   return async (dispatch) => {
     try {
       const { data } = await axios.get("/api/recipe/");
-      console.log("Data-->", data);
       dispatch(getRecipes(data));
     } catch (error) {
       console.log(error);

@@ -6,16 +6,15 @@ import Homepage from "./layout/Homepage";
 import { Provider } from "react-redux";
 import store from "../store";
 import Recipes from "./layout/Recipes";
+import Routes from "./layout/Routes";
+import Form from "./layout/Form";
 
 class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <div>
-          <Header />
-          <Homepage />
-          <Recipes />
-        </div>
+        <Routes />
+        <Form />
       </Provider>
     );
   }

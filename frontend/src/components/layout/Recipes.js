@@ -13,6 +13,9 @@ class Recipes extends React.Component {
     return (
       <div>
         <h1>All Recipes</h1>
+        {recipes.map((recipe) => (
+          <h5 key={recipe.id}>{recipe.name}</h5>
+        ))}
       </div>
     );
   }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // import tinyorganics from "./tinyorganics.jpeg";
 
 class Homepage extends React.Component {
@@ -10,7 +11,9 @@ class Homepage extends React.Component {
           src="https://cdn.shopify.com/s/files/1/0018/4650/9667/files/referral-pop-up.jpg?v=1612200279"
           alt=""
         />
-        <button className="get-started-btn">GET STARTED</button>
+        <Link to="/form">
+          <button className="get-started-btn">GET STARTED</button>
+        </Link>
       </div>
     );
   }
