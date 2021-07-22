@@ -5,6 +5,7 @@ import Header from "./layout/Header";
 import Homepage from "./layout/Homepage";
 import { Provider } from "react-redux";
 import store from "../store";
+import Recipes from "./layout/Recipes";
 
 class App extends React.Component {
   render() {
@@ -13,6 +14,7 @@ class App extends React.Component {
         <div>
           <Header />
           <Homepage />
+          <Recipes />
         </div>
       </Provider>
     );
