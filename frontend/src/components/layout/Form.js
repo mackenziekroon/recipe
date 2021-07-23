@@ -51,7 +51,7 @@ class Form extends React.Component {
       email: this.state.email,
       childfirstname: this.state.childFirstName,
       childlastname: this.state.childLastName,
-      // allergies: this.state.allergies,
+      allergens: this.state.allergies,
     };
 
     this.props.addNewCustomer(customerData);
@@ -126,7 +126,7 @@ class Form extends React.Component {
               value={childLastName}
               required
             />
-            {/* <div className="allergies">
+            <div className="allergies">
               <div className="allergy-form-container">
                 <h2>Please select all of your child's allergies</h2>
                 <div className="allergy-checklist">
@@ -179,7 +179,7 @@ class Form extends React.Component {
                   </FormControl>
                 </div>
               </div>
-            </div> */}
+            </div>
           </div>
           <button className="submit-form-btn">Next</button>
         </form>

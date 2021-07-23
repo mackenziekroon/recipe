@@ -12,8 +12,8 @@ def get_recipe():
 def get_allergens():
   url = 'https://60f5adf918254c00176dffc8.mockapi.io/api/v1/allergens/'
   res = requests.get(url , headers={'Content-Type' : 'application/json'})
-  allergens = res.json()
-  return allergens
+  allergies = res.json()
+  return allergies
 
 
 def clear_data():
@@ -25,16 +25,16 @@ def seed_recipe():
   for i in get_recipe():
       recipe = Recipe(
           name=i["name"],
-          allergens=i['allergens']
+          allergens=i["allergens"],
       )
       recipe.save()
 
 def seed_allergens():
   for i in get_allergens():
-      allergens = Allergens(
+      allergies = Allergens(
         name=i["name"],
       )
-      allergens.save()
+      allergies.save()
 
 seed_recipe()
 seed_allergens()

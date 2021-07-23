@@ -8,12 +8,12 @@ class Customer(models.Model) :
   email = models.EmailField(unique=True)
   childfirstname = models.CharField(max_length=255)
   childlastname = models.CharField(max_length=255)
-  #allergens = ArrayField(models.CharField(max_length=255), blank=True)
+  allergens = ArrayField(models.CharField(max_length=255), default=list)
 
 class Recipe(models.Model) :
   name = models.CharField(max_length=255)
+  allergens = ArrayField(models.CharField(max_length=255), default=list)
 
- # allergens = ArrayField(ArrayField(models.IntegerField()))
 
 class Allergens(models.Model) :
   name = models.CharField(max_length=255)
