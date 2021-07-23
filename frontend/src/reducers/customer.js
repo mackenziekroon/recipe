@@ -11,10 +11,10 @@ export const addCustomer = (customer) => ({
 // THUNK -> adds new customer data to db
 
 export const postCustomer = (customer) => {
-  console.log("thunk-:", customer);
   return async (dispatch) => {
     try {
       const { data } = await axios.post("/api/customer/", customer);
+      console.log("thunk-:", data);
       dispatch(addCustomer(data));
     } catch (error) {
       console.log(error);

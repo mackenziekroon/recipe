@@ -25,6 +25,7 @@ def seed_recipe():
   for i in get_recipe():
       recipe = Recipe(
           name=i["name"],
+          allergens=i['allergens']
       )
       recipe.save()
 
