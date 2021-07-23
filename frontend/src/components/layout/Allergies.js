@@ -36,7 +36,7 @@ class Allergies extends Component {
   render() {
     const allergens = this.props.allergens;
     return (
-      <div className="form-container">
+      <div id="allergies" className="form-container">
         <h2>Please select all of your child's allergies</h2>
         <div className="allergy-checklist">
           <FormControl component="fieldset">

@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import customer, { postCustomer } from "../../reducers/customer";
+import { postCustomer } from "../../reducers/customer";
+import Allergies from "./Allergies";
 
 class Form extends React.Component {
   constructor(props) {
@@ -33,9 +34,10 @@ class Form extends React.Component {
       childfirstname: this.state.childFirstName,
       childlastname: this.state.childLastName,
     };
-    console.log(customerData);
+
     this.props.addNewCustomer(customerData);
-    // this.props.history.push("/allergies");
+    console.log("after", customerData);
+    // await this.props.history.push("/allergies");
   }
 
   render() {
@@ -102,7 +104,12 @@ class Form extends React.Component {
           </div>
 
           <button className="submit-form-btn">Next</button>
+
+          <a href="allergies">
+            <div>ButtonHERE</div>
+          </a>
         </form>
+        <Allergies />
       </div>
     );
   }

@@ -43,7 +43,7 @@ body {
 .form-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 220vh;
   width: 100vw;
   align-items: center;
   justify-content: flex-start;
@@ -99,6 +99,7 @@ legend.MuiFormLabel-root.skills-box-container {
   width: 100%;
   max-width: 284px;
   margin-top: 20px;
+  margin-bottom: 100px;
 }
 
 .allergies-list {
