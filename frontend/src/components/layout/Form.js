@@ -55,8 +55,8 @@ class Form extends React.Component {
     };
 
     this.props.addNewCustomer(customerData);
-    console.log("after", customerData);
-    // await this.props.history.push(`/#allergies`);
+    console.log(customerData);
+    this.props.history.push("/recipes");
   }
 
   render() {
@@ -75,7 +75,7 @@ class Form extends React.Component {
 
     return (
       <div className="form-container">
-        <h3>Please fill out your details</h3>
+        <h2>Please fill out your details</h2>
         <form className="form" onSubmit={this.handleSubmit}>
           <div>
             <div className="form-label"> First Name</div>
@@ -126,62 +126,49 @@ class Form extends React.Component {
               value={childLastName}
               required
             />
-            <div className="allergies">
-              <div className="allergy-form-container">
-                <h2>Please select all of your child's allergies</h2>
-                <div className="allergy-checklist">
-                  <FormControl component="fieldset">
-                    <FormLabel
-                      className="skills-box-container"
-                      component="legend"
-                    >
-                      <div style={{ fontSize: "1.35rem" }}>
-                        {this.props.displayName}
-                      </div>
-                    </FormLabel>
-                    <div className="allergies-list">
-                      {allergens.map((allergy) => (
-                        <FormControlLabel
-                          key={allergy.id}
-                          control={
-                            <Checkbox
-                              style={{
-                                color: "#214042",
-                                //  transform: "scale(1.3)"
-                              }}
-                              checked={this.state.allergies.includes(
-                                allergy.name
-                              )}
-                              onChange={(event) =>
-                                this.handleCheck(allergy.name, event)
-                              }
-                              name={allergy.name}
-                              size="large"
-                            />
-                          }
-                          label={
-                            <span style={{ fontSize: "1.3rem" }}>
-                              {allergy.name}
-                            </span>
-                          }
-                        />
-                      ))}
-                    </div>
-
-                    <button
-                      type="button"
-                      onClick={this.handleSubmit}
-                      className="submit-form-btn"
-                      style={{ padding: "15px 80px" }}
-                    >
-                      SUBMIT
-                    </button>
-                  </FormControl>
-                </div>
-              </div>
-            </div>
           </div>
-          <button className="submit-form-btn">Next</button>
+          {/* <div> */}
+          {/* <div> */}
+          <h2 className="allergy-header">
+            Please select all of your child's allergies
+          </h2>
+          <div className="allergy-checklist">
+            <FormControl component="fieldset">
+              <FormLabel className="skills-box-container" component="legend">
+                <div style={{ fontSize: "1.35rem" }}>
+                  {this.props.displayName}
+                </div>
+              </FormLabel>
+              <div className="allergies-list">
+                {allergens.map((allergy) => (
+                  <FormControlLabel
+                    key={allergy.id}
+                    control={
+                      <Checkbox
+                        style={{
+                          color: "#214042",
+                          //  transform: "scale(1.3)"
+                        }}
+                        checked={this.state.allergies.includes(allergy.name)}
+                        onChange={(event) =>
+                          this.handleCheck(allergy.name, event)
+                        }
+                        name={allergy.name}
+                        size="large"
+                      />
+                    }
+                    label={
+                      <span style={{ fontSize: "1.3rem" }}>{allergy.name}</span>
+                    }
+                  />
+                ))}
+              </div>
+            </FormControl>
+          </div>
+          {/* </div> */}
+          {/* </div> */}
+
+          <button className="submit-form-btn">Submit</button>
         </form>
       </div>
     );

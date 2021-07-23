@@ -47,17 +47,14 @@ body {
   width: 100vw;
   align-items: center;
   justify-content: flex-start;
-  margin-bottom: 350px;
 }
 
-.allergy-form-container {
+.allergies {
   display: flex;
   flex-direction: column;
-  height: 220vh;
-  width: 100vw;
   align-items: center;
   justify-content: flex-start;
-  margin-top: 50px;
+  margin-top: 80px;
 }
 
 .form {
@@ -75,9 +72,10 @@ input {
   height: 30px;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
-  border: 3px #214042 solid;
+  border: 3px #b0acdb solid;
   border-radius: 40px;
   padding: 10px;
+  text-align: center;
 }
 
 .form-label {
@@ -91,32 +89,42 @@ legend.MuiFormLabel-root.skills-box-container {
 }
 
 .allergy-checklist {
-  height: 500px;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 375px;
+  /* width: 80%; */
   /* background-color: aquamarine; */
   margin: 30px 0 30px 0;
   padding: 20px;
   top: 0;
   bottom: 0;
+  border: 4px solid #f7aa1d;
 }
 
 .submit-form-btn {
   z-index: 1;
-  background-color: #214042;
+  background-color: #b0acdb;
   color: white;
   border-radius: 40px;
   border: none;
-  height: 48px;
+  height: 50px;
   width: 100%;
   max-width: 284px;
-  margin-top: 20px;
-  margin-bottom: 100px;
+  font-size: larger;
+  /* margin-top: 20px;
+  margin-bottom: 100px; */
+}
+
+.allergy-header {
+  margin-top: 60px;
 }
 
 .allergies-list {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  /* width: 80%; */
   overflow-y: scroll;
   margin-top: 20px;
   margin-bottom: 50px;
@@ -124,6 +132,21 @@ legend.MuiFormLabel-root.skills-box-container {
   overflow-y: auto;
   border: 2px solid white;
   height: 390px;
-  width: 300px;
+  width: 200px;
   font-size: 1.2em;
+}
+
+.recipe-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.recipe-heading {
+  margin-bottom: 5%;
+  top: 0;
 }

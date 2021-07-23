@@ -18,7 +18,7 @@
 
 //   handleSubmit() {
 //     // this.props.saveSkills(this.props.match.params.ownerId, this.props.skills)
-//     this.props.history.push("/recipes");
+//
 //   }
 
 //   componentDidMount() {
