@@ -2,6 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { postCustomer } from "../../reducers/customer";
+import { fetchAllergens } from "../../reducers/allergies";
+import FormLabel from "@material-ui/core/FormLabel";
+import FormControl from "@material-ui/core/FormControl";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
 import Allergies from "./Allergies";
 
 class Form extends React.Component {
@@ -16,12 +21,25 @@ class Form extends React.Component {
       allergies: [],
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleCheck = this.handleCheck.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.loadAllergens();
   }
 
   handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value,
+    });
+  }
+
+  handleCheck(allergy, event) {
+    this.setState({
+      allergies: this.state.allergies.includes(allergy)
+        ? state.allergies.filter((c) => c !== allergy)
+        : [...state.allergies, allergy],
     });
   }
 
@@ -33,14 +51,20 @@ class Form extends React.Component {
       email: this.state.email,
       childfirstname: this.state.childFirstName,
       childlastname: this.state.childLastName,
+      allergies: this.state.allergies,
     };
 
     this.props.addNewCustomer(customerData);
     console.log("after", customerData);
-    // await this.props.history.push("/allergies");
+    // await this.props.history.push(`/#allergies`);
   }
 
   render() {
+    // const customerId = this.props.customer || " ";
+    // console.log("customer", customerId);
+    const allergens = this.props.allergens;
+    const allergyArray = allergens.map((allergy) => allergy.name) || [];
+    console.log(allergyArray);
     const {
       firstName,
       lastName,
@@ -48,6 +72,7 @@ class Form extends React.Component {
       childFirstName,
       childLastName,
     } = this.state;
+
     return (
       <div className="form-container">
         <h3>Please fill out your details</h3>
@@ -101,15 +126,63 @@ class Form extends React.Component {
               value={childLastName}
               required
             />
+            <div className="allergies">
+              <div className="allergy-form-container">
+                <h2>Please select all of your child's allergies</h2>
+                <div className="allergy-checklist">
+                  <FormControl component="fieldset">
+                    <FormLabel
+                      className="skills-box-container"
+                      component="legend"
+                    >
+                      <div style={{ fontSize: "1.35rem" }}>
+                        {this.props.displayName}
+                      </div>
+                    </FormLabel>
+                    <div className="allergies-list">
+                      {allergens.map((allergy) => (
+                        <FormControlLabel
+                          key={allergy.id}
+                          control={
+                            <Checkbox
+                              style={{
+                                color: "#214042",
+                                //  transform: "scale(1.3)"
+                              }}
+                              checked={this.state.allergies.includes(
+                                allergy.name
+                              )}
+                              onChange={(event) =>
+                                this.handleCheck(allergy.name, event)
+                              }
+                              name={allergy.name}
+                              size="large"
+                            />
+                          }
+                          label={
+                            <span style={{ fontSize: "1.3rem" }}>
+                              {allergy.name}
+                            </span>
+                          }
+                        />
+                      ))}
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={this.handleSubmit}
+                      className="submit-form-btn"
+                      style={{ padding: "15px 80px" }}
+                    >
+                      SUBMIT
+                    </button>
+                  </FormControl>
+                </div>
+              </div>
+            </div>
           </div>
-
           <button className="submit-form-btn">Next</button>
-
-          <a href="allergies">
-            <div>ButtonHERE</div>
-          </a>
         </form>
-        <Allergies />
       </div>
     );
   }
@@ -118,12 +191,14 @@ class Form extends React.Component {
 const mapState = (state) => {
   return {
     customer: state.customer,
+    allergens: state.allergens,
   };
 };
 
 const mapDispatch = (dispatch) => {
   return {
     addNewCustomer: (customer) => dispatch(postCustomer(customer)),
+    loadAllergens: () => dispatch(fetchAllergens()),
   };
 };
 

@@ -47,6 +47,17 @@ body {
   width: 100vw;
   align-items: center;
   justify-content: flex-start;
+  margin-bottom: 350px;
+}
+
+.allergy-form-container {
+  display: flex;
+  flex-direction: column;
+  height: 220vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 50px;
 }
 
 .form {
