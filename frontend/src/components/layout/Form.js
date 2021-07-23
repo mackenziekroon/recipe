@@ -36,11 +36,11 @@ class Form extends React.Component {
   }
 
   handleCheck(allergy, event) {
-    this.setState({
+    this.setState((state) => ({
       allergies: this.state.allergies.includes(allergy)
         ? state.allergies.filter((c) => c !== allergy)
         : [...state.allergies, allergy],
-    });
+    }));
   }
 
   async handleSubmit(event) {
