@@ -4,7 +4,11 @@ from .serializers import RecipeSerializer, AllergenSerializer, CustomerSerialize
 
 #Recipe Viewset
 class RecipeViewSet(viewsets.ModelViewSet) :
+  #exclude_list = ['milk', 'soybean']
+  #print(exclude_list)
+  #queryset = Recipe.objects.exclude(allergens=['milk'])
   queryset = Recipe.objects.all()
+  print(queryset)
   permission_classes = [
     permissions.AllowAny
   ]

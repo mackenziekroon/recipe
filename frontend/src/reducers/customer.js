@@ -27,7 +27,7 @@ const initialState = {};
 export default function customer(state = initialState, action) {
   switch (action.type) {
     case ADD_CUSTOMER:
-      return action.customer;
+      return action.customer.allergens;
     default:
       return state;
   }
