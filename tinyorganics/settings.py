@@ -27,11 +27,11 @@ SECRET_KEY = 'django-insecure-l-wffu5o#_!u4tqd6%9*6ng_o)@dpe#e!36b5!m(24q9!9p(@#
 # SECURITY WARNING: don't run with debug turned on in production!
 #LOCAL
 #DEBUG = True
-#ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []
 
 #PRODUCTION
 DEBUG = False
-ALLOWED_HOSTS = ['https://tiny-organics.herokuapp.com/']
+#ALLOWED_HOSTS = ['https://tiny-organics.herokuapp.com/']
 
 
 # Application definition
