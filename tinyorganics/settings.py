@@ -25,13 +25,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-l-wffu5o#_!u4tqd6%9*6ng_o)@dpe#e!36b5!m(24q9!9p(@#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# LOCAL
-#DEBUG = True
-#ALLOWED_HOSTS = []
+#LOCAL
+DEBUG = True
+ALLOWED_HOSTS = []
 
 #PRODUCTION
-DEBUG = False
-ALLOWED_HOSTS = ['https://tiny-organics.herokuapp.com/']
+#DEBUG = False
+#ALLOWED_HOSTS = ['https://tiny-organics.herokuapp.com/']
 
 
 # Application definition
@@ -140,7 +140,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, "build/static")
 ]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

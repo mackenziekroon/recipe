@@ -19,41 +19,43 @@ class Recipes extends React.Component {
     const recipes = this.props.recipes;
     console.log(allergens);
 
-    // function filter(recipes, allergens) {
-    //   let filtered = [];
-    //   for (let i = 0; i < recipes.length; i++) {
-    //     if (recipes[i].allergens.length === 0) {
-    //       filtered.push(recipes[i]);
-    //     } else {
-    //       if (recipes[i].allergens.length === 1) {
-    //         if (!allergens.includes(recipes[i].allergens[0])) {
-    //           filtered.push(recipes[i]);
-    //         }
-    //       } else {
-    //         for (let j = 0; j < recipes[i].allergens.length; j++) {
-    //           let allergy = {};
-    //           allergy[recipes[i].allergens[j]] = false;
-    //           for (let g = 0; g < input.length; g++) {
-    //             if (!allergy.hasOwnProperty(recipes[i].allergens[j])) {
-    //               console.log("here", recipes[i]);
-    //               filtered.push(recipes[i]);
-    //             }
-    //           }
-    //         }
-    //       }
-    //     }
-    //   }
-    //   return filtered;
-    // }
-    // let filteredRecipes = filter(recipes, allergens);
-    // console.log(filteredRecipes);
+    function filter(recipes, allergens) {
+      let filtered = [];
+      for (let i = 0; i < recipes.length; i++) {
+        if (recipes[i].allergens.length === 0) {
+          filtered.push(recipes[i]);
+        } else {
+          if (recipes[i].allergens.length === 1) {
+            if (!allergens.includes(recipes[i].allergens[0])) {
+              filtered.push(recipes[i]);
+            }
+          } else {
+            for (let j = 0; j < recipes[i].allergens.length; j++) {
+              let allergy = {};
+              allergy[recipes[i].allergens[j]] = false;
+              for (let g = 0; g < allergens.length; g++) {
+                if (!allergy.hasOwnProperty(recipes[i].allergens[j])) {
+                  console.log("here", recipes[i]);
+                  filtered.push(recipes[i]);
+                }
+              }
+            }
+          }
+        }
+      }
+      return filtered;
+    }
+    let filteredRecipes = filter(recipes, allergens);
+    console.log("filtered Recipes: ", filteredRecipes);
 
     return (
       <div className="recipe-container">
         <h1 className="recipe-heading">Your Recipes</h1>
         <div className="recipe-list">
-          {recipes.map((recipe) => (
-            <h4 key={recipe.id}>{recipe.name}</h4>
+          {filteredRecipes.map((recipe) => (
+            <h4 key={recipe.id}>
+              {recipe.id}={recipe.name}
+            </h4>
           ))}
         </div>
       </div>

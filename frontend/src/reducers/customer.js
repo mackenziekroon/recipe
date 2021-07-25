@@ -22,7 +22,7 @@ export const postCustomer = (customer) => {
   };
 };
 
-const initialState = {};
+const initialState = [];
 
 export default function customer(state = initialState, action) {
   switch (action.type) {
