@@ -90,18 +90,18 @@ WSGI_APPLICATION = 'tinyorganics.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'tiny-organics',
         'USER': 'postgres',
-        'PASSWORD': 'Catfish867!',
+        'PASSWORD': 'Catfish0pink?',
         'HOST': 'localhost',
         'PORT': '5432'
     }
 }
 
-import dj_database_url
+#import dj_database_url
 
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+#DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 
 # Password validation
