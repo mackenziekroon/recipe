@@ -10,10 +10,18 @@ class Customer(models.Model) :
   childlastname = models.CharField(max_length=255)
   allergens = ArrayField(models.CharField(max_length=255), default=list)
 
+  def __str__(self):
+        return self.name
+
 class Recipe(models.Model) :
   name = models.CharField(max_length=255)
   allergens = ArrayField(models.CharField(max_length=255), default=list)
 
+  def __str__(self):
+        return self.name
 
 class Allergens(models.Model) :
   name = models.CharField(max_length=255)
+
+  def __str__(self):
+        return self.name
