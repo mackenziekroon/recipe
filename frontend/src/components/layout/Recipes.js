@@ -17,7 +17,6 @@ class Recipes extends React.Component {
   render() {
     const allergens = this.props.allergens || [];
     const recipes = this.props.recipes;
-    console.log(allergens);
 
     function filter(recipes, allergens) {
       let filtered = [];
@@ -35,7 +34,6 @@ class Recipes extends React.Component {
               allergy[recipes[i].allergens[j]] = false;
               for (let g = 0; g < allergens.length; g++) {
                 if (!allergy.hasOwnProperty(recipes[i].allergens[j])) {
-                  console.log("here", recipes[i]);
                   filtered.push(recipes[i]);
                 }
               }
@@ -46,16 +44,13 @@ class Recipes extends React.Component {
       return filtered;
     }
     let filteredRecipes = filter(recipes, allergens);
-    console.log("filtered Recipes: ", filteredRecipes);
 
     return (
       <div className="recipe-container">
         <h1 className="recipe-heading">Your Recipes</h1>
         <div className="recipe-list">
           {filteredRecipes.map((recipe) => (
-            <h4 key={recipe.id}>
-              {recipe.id}={recipe.name}
-            </h4>
+            <h4 key={recipe.id}>{recipe.name}</h4>
           ))}
         </div>
       </div>
