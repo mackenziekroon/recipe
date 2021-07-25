@@ -8,7 +8,6 @@ class RecipeViewSet(viewsets.ModelViewSet) :
   #print(exclude_list)
   #queryset = Recipe.objects.exclude(allergens=['milk'])
   queryset = Recipe.objects.all()
-  print(queryset)
   permission_classes = [
     permissions.AllowAny
   ]

@@ -93,7 +93,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'tiny-organics',
         'USER': 'postgres',
-        'PASSWORD': 'Catfish0pink?',
+        'PASSWORD': 'Catfish867!',
         'HOST': 'localhost',
         'PORT': '5432'
     }
