@@ -25,9 +25,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-l-wffu5o#_!u4tqd6%9*6ng_o)@dpe#e!36b5!m(24q9!9p(@#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# LOCAL
+#DEBUG = True
+#ALLOWED_HOSTS = []
 
-ALLOWED_HOSTS = ['https://tiny-organics.herokuapp.com/', '127.0.0.1']
+#PRODUCTION
+DEBUG = False
+ALLOWED_HOSTS = ['https://tiny-organics.herokuapp.com/']
 
 
 # Application definition
