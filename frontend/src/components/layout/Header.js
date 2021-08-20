@@ -4,11 +4,11 @@ class Header extends React.Component {
   render() {
     return (
       <div className="header-container">
-        <div>TINY</div>
-        <div>OUR MEALS</div>
-        <div>WHY TINY</div>
+        <div>SHOP NOW</div>
+        <div>NUTRITION</div>
+        <div>ABOUT US</div>
         <div>FAQ</div>
-        <div>TINY BLOG</div>
+        <div>BLOG</div>
       </div>
     );
   }
