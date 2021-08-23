@@ -1,5 +1,8 @@
 # project details
-To run project locally
+A single page application that allows users to input their children's allergies and recieve recipes that do not contain the allergen(s). The recipe data and allergen data are retrieved from a third party API.
+
+# run project locally
+>To run project locally
 
 **Start backend server by running:**
 >python manage.py runserver
